@@ -1,0 +1,19 @@
+version: '3'
+
+volumes:
+  uploads:
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+      args:
+        - GIT_COMMIT=adf512c
+    container_name: app
+    depends_on:
+      - db
+    env_file:
+      - .env
+    volumes:
+      - uploads:/usr/src/app/uploads
