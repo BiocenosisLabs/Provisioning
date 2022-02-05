@@ -17,3 +17,17 @@ services:
       - .env
     volumes:
       - uploads:/usr/src/app/uploads
+
+  client:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+      args:
+        - GIT_COMMIT=adf512c
+    container_name: client
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    env_file:
+      - .env
