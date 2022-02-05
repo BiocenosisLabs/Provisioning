@@ -11,8 +11,8 @@ RUN seq 1 8 | xargs -I{} mkdir -p /usr/share/man/man{}
 RUN apt-get update \
       && apt-get install -y git python build-essential postgresql-client
 
-# Install and build culturestake app
-RUN git clone https://github.com/BiocenosisLabs/AcousticGarden.git \
+# Install and build app
+RUN git clone https://github.com/BiocenosisLabs/AcousticGarden.git app \
       && cd app \
       && git checkout --quiet ${GIT_COMMIT}
 
@@ -29,7 +29,7 @@ RUN apt-get purge -y --auto-remove build-essential
 
 WORKDIR /usr/src/app
 
-EXPOSE 3000
+EXPOSE 8088
 
 COPY app/run.sh .
 
