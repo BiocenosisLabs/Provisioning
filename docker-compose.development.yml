@@ -1,0 +1,9 @@
+version: '3'
+
+volumes:
+  ipfs:
+
+services:
+  db:
+    ports:
+      - "5432:5432"
