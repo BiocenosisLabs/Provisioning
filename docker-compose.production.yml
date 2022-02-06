@@ -25,7 +25,7 @@ services:
       context: .
       dockerfile: client/Dockerfile
       args:
-        - GIT_COMMIT=2eae852
+        - GIT_COMMIT=2c4cc01
     container_name: client
     ports:
       - "3000:3000"
