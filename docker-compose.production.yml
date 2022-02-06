@@ -9,7 +9,7 @@ services:
       context: .
       dockerfile: app/Dockerfile
       args:
-        - GIT_COMMIT=adf512c
+        - GIT_COMMIT=4ee10e6
     container_name: app
     depends_on:
       - db
@@ -23,7 +23,7 @@ services:
       context: .
       dockerfile: client/Dockerfile
       args:
-        - GIT_COMMIT=adf512c
+        - GIT_COMMIT=4ee10e6
     container_name: client
     ports:
       - "3000:3000"
