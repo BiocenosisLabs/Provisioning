@@ -22,7 +22,7 @@ WORKDIR /usr/src/app
 COPY .env .
 
 RUN npm ci \
-      && npm run build
+      && npm run server:build
 
 # Remove unneeded dependencies
 RUN apt-get purge -y --auto-remove build-essential
