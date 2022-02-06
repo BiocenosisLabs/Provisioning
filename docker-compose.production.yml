@@ -11,6 +11,8 @@ services:
       args:
         - GIT_COMMIT=4ee10e6
     container_name: app
+    ports:
+      - "8088:8088"
     depends_on:
       - db
     env_file:
