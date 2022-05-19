@@ -18,3 +18,9 @@ services:
     container_name: redis
     command: 
       --requirepass ${REDIS_PASSWORD}
+
+  birdnet:
+    build:
+      context: .
+      dockerfile: birdnet/Dockerfile
+    container_name: birdnet

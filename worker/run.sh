@@ -12,4 +12,4 @@ export DATABASE_URL=postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@db:5432/$POSTGR
 export DATABASE_DIALECT=postgres
 export NODE_ENV=production
 
-node ./build/worker.js
+node ./build/server/worker.js

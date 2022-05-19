@@ -11,13 +11,7 @@ RUN apt-get update \
 # Install and build culturestake app
 RUN git clone https://github.com/BiocenosisLabs/AcousticGarden.git app \
       && cd app \
-
-WORKDIR /usr/src/app/src/client-app
-
-# Prepare variables
-# COPY .env .
-
-RUN cd app
+      && git checkout --quiet ${GIT_COMMIT}
 
 WORKDIR /usr/src/app/src/client-app
 

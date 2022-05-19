@@ -12,7 +12,7 @@ RUN apt-get update \
       && apt-get install -y git python build-essential postgresql-client
 
 # Install and build culturestake app
-RUN git clone https://github.com/ana0/meta-server.git app \
+RUN git clone https://github.com/BiocenosisLabs/AcousticGarden.git app \
       && cd app \
       && git checkout --quiet ${GIT_COMMIT}
 
@@ -21,8 +21,8 @@ WORKDIR /usr/src/app
 # Prepare variables
 COPY .env .
 
-RUN npm install \
-      && npm run build
+RUN npm ci \
+      && npm run server:build
 
 # Remove unneeded dependencies
 RUN apt-get purge -y --auto-remove build-essential
