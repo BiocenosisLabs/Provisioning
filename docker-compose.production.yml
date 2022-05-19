@@ -20,19 +20,19 @@ services:
     volumes:
       - uploads:/usr/src/app/uploads
 
-  # client:
-  #   build:
-  #     context: .
-  #     dockerfile: client/Dockerfile
-  #     args:
-  #       - GIT_COMMIT=2c4cc01
-  #   container_name: client
-  #   ports:
-  #     - "3000:3000"
-  #   depends_on:
-  #     - db
-  #   env_file:
-  #     - .env
+  client:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+      args:
+        - GIT_COMMIT=50ef609
+    container_name: client
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    env_file:
+      - .env
 
   worker:
     build:
